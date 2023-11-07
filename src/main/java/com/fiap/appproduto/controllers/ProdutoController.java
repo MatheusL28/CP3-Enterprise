@@ -1,0 +1,21 @@
+package com.fiap.appproduto.controllers;
+
+import com.fiap.appproduto.core.entities.Produto;
+import com.fiap.appproduto.core.services.ProdutoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/produto")
+public class ProdutoController {
+    @Autowired
+    private ProdutoService produtoService;
+
+    @GetMapping
+    public Iterable<Produto> GetAllProduto()
+    {
+        return produtoService.GetAllProduto();
+    }
+}
